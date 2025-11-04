@@ -68,6 +68,7 @@ body.theme-alt {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
   color: var(--text-color);
   overflow: hidden;
@@ -77,9 +78,15 @@ body.theme-alt {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@supports not ((backdrop-filter: blur(10px))) {
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
 .card.move {
-  width: 120px;
-  height: 120px;
+  width: 117px;
+  height: 117px;
   border-radius: 50%;
   overflow: hidden;
   padding: 0px;
@@ -267,10 +274,4 @@ input:checked + .slider {
   font-size: 1.2em;
   transition: 0.5s;
   box-shadow: 0 0 6px #0ff8;
-}
-
-@supports not ((backdrop-filter: blur(10px))) {
-  .card {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
 }

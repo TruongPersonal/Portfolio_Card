@@ -50,13 +50,8 @@ body.theme-alt {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.theme-toggle.rotate {
-  transform: rotate(180deg);
-}
-
 .container {
   position: fixed;
-  transform-style: preserve-3d;
   display: none;
   z-index: 99;
 }
@@ -70,11 +65,10 @@ body.theme-alt {
   position: relative;
   width: var(--card-width);
   height: var(--card-height);
-  background-color: var(--bg-blur);
+  background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(9px);
-  border-top: 1px solid var(--border-light);
-  border-left: 1px solid var(--border-light);
-  box-shadow: 4px 4px 12px var(--shadow-dark);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
   color: var(--text-color);
   overflow: hidden;
   display: flex;
@@ -117,7 +111,7 @@ body.theme-alt {
   width: 100%;
   text-align: center;
   text-shadow: 1px 2px 2px #000;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .name-job h3 {
@@ -195,8 +189,8 @@ body.theme-alt {
 
 .theme-switch {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
   width: 60px;
   height: 30px;
   background: #444;
@@ -204,9 +198,11 @@ body.theme-alt {
   cursor: pointer;
   transition: background 0.4s;
 }
+
 .theme-switch input {
   display: none;
 }
+
 .slider {
   position: absolute;
   top: 3px;
@@ -225,9 +221,7 @@ input:checked + .slider {
   position: absolute;
   cursor: pointer;
   right: 60px;
-  top: 30%;
-  margin-bottom: 10px;
-  margin-left: -20px;
+  top: 37.5%;
   width: 40px;
   height: 40px;
   background-color: #555;
@@ -244,23 +238,19 @@ input:checked + .slider {
   position: relative;
   width: var(--icon-width);
   height: var(--icon-width);
-  transform-style: preserve-3d;
-  transform: rotateX(-40deg) rotateY(45deg);
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icons {
-  position: relative;
-  left: 5px;
-  margin-top: -50%;
+  position: absolute;
+  bottom: 2%;
   width: var(--icon-width);
-  height: calc(var(--icon-width) * 4);
-  transition: 0.6s;
+  height: var(--icon-width);
+  transition: 0.5s all;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: translateZ(calc(var(--icon-width) * -1)) translateY(-50%);
-  transform-style: preserve-3d;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
 .icon .fa-brands {
@@ -279,30 +269,8 @@ input:checked + .slider {
   box-shadow: 0 0 6px #0ff8;
 }
 
-.icon {
-  will-change: transform;
-}
-
-.front {
-  transform: translateZ(calc(var(--icon-width) * 0.5));
-}
-
-.back {
-  transform: translateZ(calc(var(--icon-width) * -0.5));
-}
-
-.left {
-  transform: rotateY(-90deg) translateZ(calc(var(--icon-width) * 0.5));
-}
-
-.right {
-  transform: rotateY(90deg) translateZ(calc(var(--icon-width) * 0.5));
-}
-
-.bottom {
-  transform: rotateX(-90deg) translateZ(calc(var(--icon-width) * 0.5));
-}
-
-.top {
-  transform: rotateX(90deg) translateZ(calc(var(--icon-width) * 0.5));
+@supports not ((backdrop-filter: blur(10px))) {
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }

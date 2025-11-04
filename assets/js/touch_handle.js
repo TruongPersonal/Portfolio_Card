@@ -97,13 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.add('rotating');
         icon.classList.add('active');
         
-        // Start rotation animation
-        icon.style.transform = 'rotateX(-40deg) rotateY(405deg)';
-        
         // After animation completes, open link and reset
         setTimeout(() => {
             window.open(link, '_blank');
-            icon.style.transform = 'rotateX(-40deg) rotateY(45deg)';
             
             // Remove classes after animation is complete
             setTimeout(() => {

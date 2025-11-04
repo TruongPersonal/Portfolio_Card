@@ -47,22 +47,14 @@
   border-color: var(--accent-primary);
 }
 
-.contact.focused {
-  transform: rotateY(45deg) translateX(180px) translateZ(-180px);
-}
-
-.contact.focused ~ .card {
-  transform: rotateY(45deg) translateX(140px) translateZ(-120px);
-}
-
 .contact.focused ~ .icons {
-  height: var(--card-height);
-  transform: translateZ(var(--icon-width)) translateY(-50%);
+  width: calc(var(--card-width));
+  justify-content: space-between;
+  bottom: calc(var(--icon-width) * -1 - 5%)
 }
 
 .icon.active {
   cursor: pointer;
-  transform: rotateX(-40deg) rotateY(315deg);
 }
 
 .icon.active .fa-brands {

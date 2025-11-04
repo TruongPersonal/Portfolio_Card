@@ -28,12 +28,6 @@ setTimeout(function () {
 
 
 themeToggle.addEventListener("click", () => {
-    themeToggle.classList.add('rotate');
-    
-    setTimeout(() => {
-        themeToggle.classList.remove('rotate');
-    }, 500);
-
     const newSource = document.body.classList.contains("theme-alt") 
         ? "./assets/videos/background_one.mp4" 
         : "./assets/videos/background_two.mp4";

@@ -117,7 +117,7 @@ body.theme-alt {
   width: 100%;
   text-align: center;
   text-shadow: 1px 2px 2px #000;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .name-job h3 {
@@ -225,7 +225,9 @@ input:checked + .slider {
   position: absolute;
   cursor: pointer;
   right: 60px;
-  top: 37.5%;
+  top: 30%;
+  margin-bottom: 10px;
+  margin-left: -20px;
   width: 40px;
   height: 40px;
   background-color: #555;
@@ -248,9 +250,9 @@ input:checked + .slider {
 }
 
 .icons {
-  position: absolute;
+  position: relative;
   left: 5px;
-  top: 50%;
+  margin-top: -50%;
   width: var(--icon-width);
   height: calc(var(--icon-width) * 4);
   transition: 0.6s;

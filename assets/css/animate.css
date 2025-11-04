@@ -1,0 +1,88 @@
+@keyframes moveIn {
+  0% {
+    transform: scale(0);
+    border-radius: 50%;
+  }
+  25% {
+    transform: scale(0.2);
+    border-radius: 25%;
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-cv.active {
+  background-color: var(--accent-primary);
+}
+
+.btn-message.active {
+  background-color: var(--accent-primary);
+}
+
+.btn-message.active a {
+  color: #000;
+}
+
+.buttons .fa-brands.active {
+  background-color: #fff;
+  color: #222;
+}
+
+.theme-toggle.active {
+  border-color: #222;
+  color: #000;
+  background-color: var(--accent-primary);
+}
+
+.contact.active {
+  box-shadow: 0 0 12px var(--accent-primary);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.contact.focused {
+  transform: rotateY(45deg) translateX(180px) translateZ(-180px);
+}
+
+.contact.focused ~ .card {
+  transform: rotateY(45deg) translateX(140px) translateZ(-120px);
+}
+
+.contact.focused ~ .icons {
+  height: var(--card-height);
+  transform: translateZ(var(--icon-width)) translateY(-50%);
+}
+
+.icon.active {
+  cursor: pointer;
+  transform: rotateX(-40deg) rotateY(315deg);
+}
+
+.icon.active .fa-brands {
+  border-color: inherit;
+  background-color: #fff;
+  box-shadow: 0 0 12px var(--accent-primary);
+}
+
+.icon.active .fa-facebook-f {
+  color: #1877f2;
+}
+
+.icon.active .fa-discord {
+  color: #5865f2;
+}
+
+.icon.active .fa-linkedin {
+  color: #0a66c2;
+}
+
+.icon.active .fa-github {
+  color: #000;
+}

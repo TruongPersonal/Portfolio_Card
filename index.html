@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>TruongPersonal - Portfolio Card</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -49,12 +49,14 @@
         oncontextmenu="return false;"
         playsinline
       ></video>
+
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider"></span>
+      </label>
     </div>
     <div class="container">
-      <button class="contact"><i class="fa-solid fa-phone"></i></button>
-      <button id="theme-toggle" class="theme-toggle">
-        <i class="fa-solid fa-circle-half-stroke"></i>
-      </button>
+<button class="contact"><i class="fa-solid fa-globe"></i></button>
       <div class="card move">
         <div class="imgbox">
           <img src="./assets/images/profile.png" alt="Ngô Quang Trường" />
@@ -65,7 +67,7 @@
         </div>
         <div class="buttons">
           <button class="btn-cv">
-            <a href="#">My CV</a>
+            <a href="https://cv.truongpersonal.vercel.app/">My CV</a>
           </button>
           <button class="btn-message">
             <a href="mailto: ngoquangtruong.isme@gmail.com">Message</a>
@@ -111,3 +113,4 @@
 </html>
 
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/animate.js"></script>

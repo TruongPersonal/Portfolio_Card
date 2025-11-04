@@ -35,6 +35,7 @@ body.theme-alt {
   height: 100%;
   object-fit: cover;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .video-background.fade-out {
@@ -94,25 +95,6 @@ body.theme-alt {
   transform: translateY(0);
 }
 
-.card.move.card:before {
-  opacity: 0;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  left: -100%;
-  width: 70px;
-  height: 400px;
-  background-color: #fffb;
-  transform: rotate(38deg) translateY(-25%);
-  z-index: 1;
-}
-
-.container:hover .card:before {
-  animation: shimmerBrightness 0.8s 1 forwards;
-}
-
 .imgbox {
   width: 115px;
   height: 115px;
@@ -125,18 +107,11 @@ body.theme-alt {
   transition: 0.6s linear;
 }
 
-.imgbox:hover {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: unset;
-  transform: translateY(0px);
-}
-
 .imgbox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .name-job {
@@ -191,18 +166,10 @@ body.theme-alt {
   transition: background-color 0.8s ease;
 }
 
-.btn-cv:hover {
-  background-color: var(--accent-primary);
-}
-
 .btn-message a {
   text-decoration: none;
   color: var(--accent-primary);
   transition: color 0.8s ease;
-}
-
-.btn-message:hover a {
-  color: #000;
 }
 
 .btn-message {
@@ -211,10 +178,6 @@ body.theme-alt {
   background-color: transparent;
   color: var(--text-color);
   transition: all 0.8s ease;
-}
-
-.btn-message:hover {
-  background-color: var(--accent-primary);
 }
 
 .buttons .fa-brands {
@@ -229,11 +192,6 @@ body.theme-alt {
   font-size: 1.22em;
   border-radius: 50%;
   transition: all 0.8s ease;
-}
-
-.buttons .fa-brands:hover {
-  background-color: #fff;
-  color: #222;
 }
 
 .theme-toggle {
@@ -253,12 +211,6 @@ body.theme-alt {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
-  border-color: #222;
-  color: #000;
-  background-color: var(--accent-primary);
-}
-
 .contact {
   cursor: pointer;
   position: absolute;
@@ -275,30 +227,6 @@ body.theme-alt {
   z-index: 1;
   transition: 0.4s;
 }
-
-.contact:hover {
-  border-color: #222;
-  color: #000;
-  background-color: #fc0;
-}
-
-.contact:focus {
-  transform: rotateY(45deg) translateX(120px) translateZ(-70px);
-}
-
-.contact:focus ~ .card {
-  transform: rotateY(45deg) translateX(140px) translateZ(-120px);
-}
-
-.contact:focus ~ .icons {
-  height: var(--card-height);
-  transform: translateZ(var(--icon-width)) translateY(-50%);
-}
-
-.contact:focus ~ .theme-toggle {
-    transform: rotateY(45deg) translateX(170px) translateZ(-190px);
-}
-
 
 .icon {
   position: relative;
@@ -339,35 +267,8 @@ body.theme-alt {
   box-shadow: 0 0 6px #0ff8;
 }
 
-.icon:hover {
-  cursor: pointer;
-  transform: rotateX(-40deg) rotateY(315deg);
-}
-
 .icon {
   will-change: transform;
-}
-
-.icon:hover .fa-brands {
-  border-color: inherit;
-  background-color: #fff;
-  box-shadow: 0 0 12px var(--accent-primary);
-}
-
-.icon:hover .fa-facebook-f {
-  color: #1877f2;
-}
-
-.icon:hover .fa-discord {
-  color: #5865f2;
-}
-
-.icon:hover .fa-linkedin {
-  color: #0a66c2;
-}
-
-.icon:hover .fa-github {
-  color: #000;
 }
 
 .front {
@@ -393,3 +294,85 @@ body.theme-alt {
 .top {
   transform: rotateX(90deg) translateZ(calc(var(--icon-width) * 0.5));
 }
+
+.imgbox.active {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: unset;
+  transform: translateY(0px);
+}
+
+.btn-cv.active {
+  background-color: var(--accent-primary);
+}
+
+.btn-message.active {
+  background-color: var(--accent-primary);
+}
+
+.btn-message.active a {
+  color: #000;
+}
+
+.buttons .fa-brands.active {
+  background-color: #fff;
+  color: #222;
+}
+
+.theme-toggle.active {
+  border-color: #222;
+  color: #000;
+  background-color: var(--accent-primary);
+}
+
+.contact.active {
+  border-color: #222;
+  color: #000;
+  background-color: #fc0;
+}
+
+.contact.focused {
+  transform: rotateY(45deg) translateX(120px) translateZ(-70px);
+}
+
+.contact.focused ~ .card {
+  transform: rotateY(45deg) translateX(140px) translateZ(-120px);
+}
+
+.contact.focused ~ .icons {
+  height: var(--card-height);
+  transform: translateZ(var(--icon-width)) translateY(-50%);
+}
+
+.contact.focused ~ .theme-toggle {
+  transform: rotateY(45deg) translateX(170px) translateZ(-190px);
+}
+
+.icon.active {
+  cursor: pointer;
+  transform: rotateX(-40deg) rotateY(315deg);
+}
+
+.icon.active .fa-brands {
+  border-color: inherit;
+  background-color: #fff;
+  box-shadow: 0 0 12px var(--accent-primary);
+}
+
+.icon.active .fa-facebook-f {
+  color: #1877f2;
+}
+
+.icon.active .fa-discord {
+  color: #5865f2;
+}
+
+.icon.active .fa-linkedin {
+  color: #0a66c2;
+}
+
+.icon.active .fa-github {
+  color: #000;
+}
+
